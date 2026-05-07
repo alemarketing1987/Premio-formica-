@@ -5,129 +5,74 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Premio Formica">
-<title>Premio Formica</title>
+<meta name="theme-color" content="#15110b">
+<title>Premio Formica 2026</title>
 <style>
-:root {
-  --bg:#f6f3ed;
-  --card:#ffffff;
-  --text:#151515;
-  --muted:#666;
-  --border:#ded8cc;
-  --accent:#111;
-}
-* { box-sizing: border-box; }
-body {
-  margin: 0;
-  padding: 18px;
-  padding-bottom: 40px;
-  background: var(--bg);
-  color: var(--text);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
-}
-h1 {
-  text-align: center;
-  font-size: 30px;
-  margin: 10px 0 4px;
-}
-.subtitle {
-  text-align:center;
-  color:var(--muted);
-  margin-bottom: 18px;
-}
-.card {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 18px;
-  padding: 16px;
-  margin-bottom: 14px;
-  box-shadow: 0 6px 18px rgba(0,0,0,.05);
-}
-h2 {
-  margin: 0 0 12px;
-  font-size: 20px;
-}
-label {
-  display:block;
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--muted);
-  margin-top: 12px;
-}
-select, input, button {
-  width: 100%;
-  appearance: none;
-  -webkit-appearance: none;
-  border-radius: 14px;
-  border: 1px solid var(--border);
-  padding: 14px;
-  margin-top: 7px;
-  font-size: 16px;
-  background: #fff;
-}
-button {
-  background: var(--accent);
-  color: #fff;
-  border: none;
-  font-weight: 800;
-  margin-top: 14px;
-}
-button.secondary {
-  background: #fff;
-  color: #111;
-  border: 1px solid var(--border);
-}
-button.danger {
-  background: #8b1e1e;
-}
-.row {
-  display:grid;
-  grid-template-columns: 1fr 100px;
-  gap: 10px;
-  align-items:end;
-}
-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-th, td {
-  padding: 11px 6px;
-  border-bottom: 1px solid #eee;
-  text-align:left;
-}
-th:last-child, td:last-child {
-  text-align:right;
-  font-weight:800;
-}
-.rank {
-  width: 34px;
-  color: var(--muted);
-}
-.history-item {
-  padding: 10px 0;
-  border-bottom: 1px solid #eee;
-  font-size: 14px;
-}
-.small {
-  color: var(--muted);
-  font-size: 13px;
-}
-.empty {
-  color: var(--muted);
-  text-align:center;
-  padding: 10px;
-}
+:root {{
+  --bg:#f3eadb; --card:#fffaf1; --text:#18120b; --muted:#6e604e;
+  --gold:#c79628; --dark:#15110b; --border:#e0cfaf; --danger:#8f2323;
+}}
+* {{ box-sizing:border-box; }}
+body {{
+  margin:0; padding:18px; padding-bottom:40px;
+  background:radial-gradient(circle at top, rgba(199,150,40,.25), transparent 34%), var(--bg);
+  color:var(--text);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+}}
+.hero {{ text-align:center; padding:18px 8px 12px; }}
+h1 {{ margin:0; font-size:32px; line-height:1.05; }}
+.subtitle {{ margin-top:8px; color:var(--muted); font-weight:700; font-style:italic; }}
+.card {{
+  background:var(--card); border:1px solid var(--border); border-radius:22px;
+  padding:16px; margin-bottom:14px; box-shadow:0 8px 22px rgba(35,23,5,.08);
+}}
+h2 {{ margin:0 0 12px; font-size:20px; }}
+label {{ display:block; font-size:13px; font-weight:800; color:var(--muted); margin-top:12px; }}
+select,input,button {{
+  width:100%; border-radius:15px; border:1px solid var(--border);
+  padding:14px; margin-top:7px; font-size:16px; background:#fff;
+}}
+button {{ background:var(--dark); color:white; border:none; font-weight:900; margin-top:14px; }}
+button.secondary {{ background:#fff; color:var(--dark); border:1px solid var(--border); }}
+button.danger {{ background:var(--danger); }}
+.podium {{ display:grid; grid-template-columns:1fr 1.2fr 1fr; gap:8px; align-items:end; margin-top:4px; }}
+.podium-box {{
+  background:#fff; border:1px solid var(--border); border-radius:18px;
+  padding:12px 8px; text-align:center; min-height:88px;
+}}
+.podium-box.first {{ border:2px solid var(--gold); min-height:108px; }}
+.medal {{ font-size:26px; }}
+.podium-name {{ font-weight:900; margin-top:4px; font-size:14px; }}
+.podium-points {{ color:var(--muted); font-weight:800; font-size:13px; }}
+table {{ width:100%; border-collapse:collapse; }}
+th,td {{ padding:11px 5px; border-bottom:1px solid #eadfca; text-align:left; }}
+th {{ color:var(--muted); font-size:13px; }}
+th:last-child,td:last-child {{ text-align:right; font-weight:900; }}
+.rank {{ width:34px; color:var(--muted); }}
+.badges {{ display:flex; flex-wrap:wrap; gap:8px; }}
+.badge {{ background:#fff; border:1px solid var(--border); border-radius:999px; padding:8px 10px; font-size:13px; font-weight:800; }}
+.history-item {{ padding:10px 0; border-bottom:1px solid #eadfca; font-size:14px; }}
+.small {{ color:var(--muted); font-size:13px; }}
+.empty {{ color:var(--muted); text-align:center; padding:10px; }}
+.row {{ display:grid; grid-template-columns:1fr 100px; gap:10px; align-items:end; }}
+.rules {{ font-size:14px; }}
+.rule-row {{ display:flex; justify-content:space-between; border-bottom:1px solid #eadfca; padding:9px 0; gap:10px; }}
+.rule-row strong {{ white-space:nowrap; }}
 </style>
 </head>
 <body>
-<h1>🏆 Premio Formica</h1>
-<div class="subtitle">Classifica ufficiale delle vacanze</div>
+
+<div class="hero">
+  <h1>🏆 Premio Formica 2026</h1>
+  <div class="subtitle">“La ruota più oliata di Roveleto”</div>
+</div>
+
+<div class="card"><h2>Podio</h2><div class="podium" id="podium"></div></div>
 
 <div class="card">
   <h2>Assegna punti</h2>
-
   <label for="person">Partecipante</label>
-  <select id="person">
-    <option value="Bozzo">Bozzo</option>
+  <select id="person"><option value="Bozzo">Bozzo</option>
 <option value="Sive Sr">Sive Sr</option>
 <option value="Sive Jr">Sive Jr</option>
 <option value="Gale">Gale</option>
@@ -138,27 +83,30 @@ th:last-child, td:last-child {
 <option value="Pera Jr">Pera Jr</option>
 <option value="Gallo">Gallo</option>
 <option value="Rizzino">Rizzino</option>
-<option value="Patata">Patata</option>
-  </select>
-
-  <label for="event">Evento</label>
-  <select id="event">
-    <option value="1" data-label="Aperitivo">Aperitivo (+1)</option>
-<option value="3" data-label="Cena fuori">Cena fuori (+3)</option>
-<option value="10" data-label="Weekend fuori">Weekend fuori (+10)</option>
-<option value="20" data-label="Weekend estero">Weekend estero (+20)</option>
-<option value="30" data-label="Vacanza lunga">Vacanza lunga (+30)</option>
-<option value="40" data-label="Viaggio intercontinentale">Viaggio intercontinentale (+40)</option>
-  </select>
-
+<option value="Patata">Patata</option></select>
+  <label for="event">Evento / Bonus</label>
+  <select id="event"><option value="2" data-key="pranzo" data-label="🍔 Pranzo fuori">🍔 Pranzo fuori (+2)</option>
+<option value="4" data-key="cena" data-label="🍝 Cena fuori">🍝 Cena fuori (+4)</option>
+<option value="8" data-key="cena_top" data-label="🍷 Cena ristorante top">🍷 Cena ristorante top (+8)</option>
+<option value="6" data-key="bottiglia" data-label="🍾 Bottiglia importante">🍾 Bottiglia importante (+6)</option>
+<option value="6" data-key="pomeriggissimo" data-label="☀️ Pomeriggissimo">☀️ Pomeriggissimo (+6)</option>
+<option value="8" data-key="pomeriggissimo_colle" data-label="⛰️ Pomeriggissimo Colle">⛰️ Pomeriggissimo Colle (+8)</option>
+<option value="15" data-key="weekend_italia" data-label="🇮🇹 Weekend Italia">🇮🇹 Weekend Italia (+15)</option>
+<option value="25" data-key="weekend_estero" data-label="✈️ Weekend estero">✈️ Weekend estero (+25)</option>
+<option value="55" data-key="vacanza_7" data-label="🏖️ Vacanza 7 giorni">🏖️ Vacanza 7 giorni (+55)</option>
+<option value="90" data-key="vacanza_15" data-label="🌍 Vacanza 15 giorni">🌍 Vacanza 15 giorni (+90)</option>
+<option value="25" data-key="mare_esotico" data-label="🌴 Bonus vacanza mare posto esotico">🌴 Bonus vacanza mare posto esotico (+25)</option>
+<option value="2" data-key="aperitivo_16" data-label="🍹 Aperitivo entro le 16">🍹 Aperitivo entro le 16 (+2)</option>
+<option value="10" data-key="barca" data-label="🚤 Barca/Yacht">🚤 Barca/Yacht (+10)</option>
+<option value="15" data-key="voli_mese" data-label="🛫 Più di 2 voli in un mese">🛫 Più di 2 voli in un mese (+15)</option>
+<option value="20" data-key="business" data-label="👑 Business class">👑 Business class (+20)</option></select>
   <button type="button" onclick="addEvent()">Assegna punti</button>
 </div>
 
 <div class="card">
   <h2>Punti manuali</h2>
   <label for="manualPerson">Partecipante</label>
-  <select id="manualPerson">
-    <option value="Bozzo">Bozzo</option>
+  <select id="manualPerson"><option value="Bozzo">Bozzo</option>
 <option value="Sive Sr">Sive Sr</option>
 <option value="Sive Jr">Sive Jr</option>
 <option value="Gale">Gale</option>
@@ -169,32 +117,21 @@ th:last-child, td:last-child {
 <option value="Pera Jr">Pera Jr</option>
 <option value="Gallo">Gallo</option>
 <option value="Rizzino">Rizzino</option>
-<option value="Patata">Patata</option>
-  </select>
-
+<option value="Patata">Patata</option></select>
   <div class="row">
-    <div>
-      <label for="manualReason">Motivo</label>
-      <input id="manualReason" placeholder="Es. bonus foto prova">
-    </div>
-    <div>
-      <label for="manualPoints">Punti</label>
-      <input id="manualPoints" type="number" inputmode="numeric" value="1">
-    </div>
+    <div><label for="manualReason">Motivo</label><input id="manualReason" placeholder="Es. premio speciale"></div>
+    <div><label for="manualPoints">Punti</label><input id="manualPoints" type="number" inputmode="numeric" value="1"></div>
   </div>
-
   <button type="button" onclick="addManual()">Aggiungi punti manuali</button>
 </div>
 
 <div class="card">
   <h2>Classifica</h2>
-  <table>
-    <thead>
-      <tr><th class="rank">#</th><th>Nome</th><th>Punti</th></tr>
-    </thead>
-    <tbody id="ranking"></tbody>
-  </table>
+  <table><thead><tr><th class="rank">#</th><th>Nome</th><th>Punti</th></tr></thead><tbody id="ranking"></tbody></table>
 </div>
+
+<div class="card"><h2>Badge automatici</h2><div id="badges" class="badges"></div></div>
+<div class="card"><h2>Regolamento</h2><div class="rules" id="rules"></div></div>
 
 <div class="card">
   <h2>Storico</h2>
@@ -204,125 +141,146 @@ th:last-child, td:last-child {
 </div>
 
 <script>
-const STORAGE_KEY = "premio_formica_v2_custom_2026";
-const initialPlayers = {
-  "Bozzo": 0,
-  "Sive Sr": 0,
-  "Sive Jr": 0,
-  "Gale": 0,
-  "NicolaIlMilan": 0,
-  "Pacra": 0,
-  "Pacra Jr": 0,
-  "Pera": 0,
-  "Pera Jr": 0,
-  "Gallo": 0,
-  "Rizzino": 0,
-  "Patata": 0
-};
+const STORAGE_KEY = "premio_formica_definitivo_2026_v2";
+const initialPlayers = {"Bozzo": 0, "Sive Sr": 0, "Sive Jr": 0, "Gale": 0, "NicolaIlMilan": 0, "Pacra": 0, "Pacra Jr": 0, "Pera": 0, "Pera Jr": 0, "Gallo": 0, "Rizzino": 0, "Patata": 0};
+const eventList = [{"label": "🍔 Pranzo fuori", "points": 2, "key": "pranzo"}, {"label": "🍝 Cena fuori", "points": 4, "key": "cena"}, {"label": "🍷 Cena ristorante top", "points": 8, "key": "cena_top"}, {"label": "🍾 Bottiglia importante", "points": 6, "key": "bottiglia"}, {"label": "☀️ Pomeriggissimo", "points": 6, "key": "pomeriggissimo"}, {"label": "⛰️ Pomeriggissimo Colle", "points": 8, "key": "pomeriggissimo_colle"}, {"label": "🇮🇹 Weekend Italia", "points": 15, "key": "weekend_italia"}, {"label": "✈️ Weekend estero", "points": 25, "key": "weekend_estero"}, {"label": "🏖️ Vacanza 7 giorni", "points": 55, "key": "vacanza_7"}, {"label": "🌍 Vacanza 15 giorni", "points": 90, "key": "vacanza_15"}, {"label": "🌴 Bonus vacanza mare posto esotico", "points": 25, "key": "mare_esotico"}, {"label": "🍹 Aperitivo entro le 16", "points": 2, "key": "aperitivo_16"}, {"label": "🚤 Barca/Yacht", "points": 10, "key": "barca"}, {"label": "🛫 Più di 2 voli in un mese", "points": 15, "key": "voli_mese"}, {"label": "👑 Business class", "points": 20, "key": "business"}];
 
 let state = loadState();
 
-function loadState() {
-  try {
+function loadState() {{
+  try {{
     const saved = JSON.parse(localStorage.getItem(STORAGE_KEY));
-    if (saved && saved.players && saved.history) {
-      for (const name of Object.keys(initialPlayers)) {
+    if (saved && saved.players && saved.history) {{
+      for (const name of Object.keys(initialPlayers)) {{
         if (typeof saved.players[name] !== "number") saved.players[name] = 0;
-      }
-      for (const name of Object.keys(saved.players)) {
+      }}
+      for (const name of Object.keys(saved.players)) {{
         if (!(name in initialPlayers)) delete saved.players[name];
-      }
+      }}
       return saved;
-    }
-  } catch (e) {}
-  return { players: {...initialPlayers}, history: [] };
-}
+    }}
+  }} catch (e) {{}}
+  return {{ players: {{...initialPlayers}}, history: [] }};
+}}
 
-function saveState() {
+function saveState() {{
   localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
-}
+}}
 
-function today() {
-  return new Date().toLocaleDateString("it-IT", {
-    day: "2-digit", month: "2-digit", year: "numeric",
-    hour: "2-digit", minute: "2-digit"
-  });
-}
+function nowString() {{
+  return new Date().toLocaleDateString("it-IT", {{
+    day:"2-digit", month:"2-digit", year:"numeric", hour:"2-digit", minute:"2-digit"
+  }});
+}}
 
-function addPoints(name, points, label) {
+function standings() {{
+  return Object.entries(state.players).sort((a,b) => b[1] - a[1] || a[0].localeCompare(b[0]));
+}}
+
+function addPoints(name, points, label, key) {{
   if (!name || isNaN(points)) return;
   state.players[name] = (state.players[name] || 0) + points;
-  state.history.push({
-    name,
-    points,
-    label,
-    date: today()
-  });
+  state.history.push({{ name, points, label, key: key || "manuale", date: nowString() }});
   saveState();
   render();
-}
+}}
 
-function addEvent() {
+function addEvent() {{
   const person = document.getElementById("person").value;
   const eventSelect = document.getElementById("event");
   const points = Number(eventSelect.value);
-  const label = eventSelect.options[eventSelect.selectedIndex].dataset.label;
-  addPoints(person, points, label);
-}
+  const selected = eventSelect.options[eventSelect.selectedIndex];
+  addPoints(person, points, selected.dataset.label, selected.dataset.key);
+}}
 
-function addManual() {
+function addManual() {{
   const person = document.getElementById("manualPerson").value;
   const points = Number(document.getElementById("manualPoints").value);
   const reason = document.getElementById("manualReason").value.trim() || "Punti manuali";
-  addPoints(person, points, reason);
+  addPoints(person, points, reason, "manuale");
   document.getElementById("manualReason").value = "";
   document.getElementById("manualPoints").value = "1";
-}
+}}
 
-function undoLast() {
+function undoLast() {{
   const last = state.history.pop();
   if (!last) return;
   state.players[last.name] = (state.players[last.name] || 0) - last.points;
   saveState();
   render();
-}
+}}
 
-function resetAll() {
-  const ok = confirm("Vuoi azzerare tutta la classifica e lo storico?");
-  if (!ok) return;
-  state = { players: {...initialPlayers}, history: [] };
+function resetAll() {{
+  if (!confirm("Vuoi azzerare tutta la classifica e lo storico?")) return;
+  state = {{ players: {{...initialPlayers}}, history: [] }};
   saveState();
   render();
-}
+}}
 
-function render() {
+function countEvents(name, keys) {{
+  return state.history.filter(x => x.name === name && keys.includes(x.key)).length;
+}}
+
+function renderPodium() {{
+  const top = standings().slice(0,3);
+  const order = [top[1], top[0], top[2]];
+  const medals = ["🥈", "🥇", "🥉"];
+  const classes = ["", "first", ""];
+  document.getElementById("podium").innerHTML = order.map((item, i) => {{
+    if (!item) return `<div class="podium-box"><div class="medal">${{medals[i]}}</div><div class="podium-name">-</div><div class="podium-points">0 pt</div></div>`;
+    return `<div class="podium-box ${{classes[i]}}"><div class="medal">${{medals[i]}}</div><div class="podium-name">${{item[0]}}</div><div class="podium-points">${{item[1]}} pt</div></div>`;
+  }}).join("");
+}}
+
+function renderRanking() {{
   const ranking = document.getElementById("ranking");
   ranking.innerHTML = "";
+  standings().forEach(([name, points], index) => {{
+    const medal = index === 0 ? "🥇" : index === 1 ? "🥈" : index === 2 ? "🥉" : index + 1;
+    const tr = document.createElement("tr");
+    tr.innerHTML = `<td class="rank">${{medal}}</td><td>${{name}}</td><td>${{points}}</td>`;
+    ranking.appendChild(tr);
+  }});
+}}
 
-  Object.entries(state.players)
-    .sort((a,b) => b[1] - a[1] || a[0].localeCompare(b[0]))
-    .forEach(([name, points], index) => {
-      const medal = index === 0 ? "🥇" : index === 1 ? "🥈" : index === 2 ? "🥉" : index + 1;
-      const tr = document.createElement("tr");
-      tr.innerHTML = `<td class="rank">${medal}</td><td>${name}</td><td>${points}</td>`;
-      ranking.appendChild(tr);
-    });
+function renderBadges() {{
+  const badges = [];
+  for (const name of Object.keys(state.players)) {{
+    if (countEvents(name, ["weekend_estero"]) >= 3) badges.push(`🌴 Re di Ibiza: ${{name}}`);
+    if (countEvents(name, ["bottiglia"]) >= 5) badges.push(`🍾 Sciabolatore: ${{name}}`);
+    if (countEvents(name, ["pomeriggissimo", "pomeriggissimo_colle"]) >= 5) badges.push(`☀️ Signore del Pomeriggio: ${{name}}`);
+    if (countEvents(name, ["voli_mese"]) >= 10) badges.push(`🛫 Ryanair Gold: ${{name}}`);
+    if ((state.players[name] || 0) >= 100) badges.push(`🐜 Formica Suprema: ${{name}}`);
+  }}
+  document.getElementById("badges").innerHTML = badges.length ? badges.map(b => `<div class="badge">${{b}}</div>`).join("") : `<div class="empty">Nessun badge ancora.</div>`;
+}}
 
+function renderRules() {{
+  document.getElementById("rules").innerHTML = eventList.map(e => `<div class="rule-row"><span>${{e.label}}</span><strong>+${{e.points}}</strong></div>`).join("");
+}}
+
+function renderHistory() {{
   const history = document.getElementById("history");
   history.innerHTML = "";
-
-  if (state.history.length === 0) {
+  if (state.history.length === 0) {{
     history.innerHTML = '<div class="empty">Nessun evento ancora.</div>';
     return;
-  }
-
-  state.history.slice().reverse().forEach(item => {
+  }}
+  state.history.slice().reverse().forEach(item => {{
     const div = document.createElement("div");
     div.className = "history-item";
-    div.innerHTML = `<strong>${item.name}</strong>: ${item.label} <strong>(${item.points > 0 ? "+" : ""}${item.points})</strong><br><span class="small">${item.date}</span>`;
+    div.innerHTML = `<strong>${{item.name}}</strong>: ${{item.label}} <strong>(${{item.points > 0 ? "+" : ""}}${{item.points}})</strong><br><span class="small">${{item.date}}</span>`;
     history.appendChild(div);
-  });
-}
+  }});
+}}
+
+function render() {{
+  renderPodium();
+  renderRanking();
+  renderBadges();
+  renderRules();
+  renderHistory();
+}}
 
 render();
 </script>
