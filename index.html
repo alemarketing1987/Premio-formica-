@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Premio Formica">
+<title>Premio Formica</title>
+<style>
+:root {
+  --bg:#f6f3ed;
+  --card:#ffffff;
+  --text:#151515;
+  --muted:#666;
+  --border:#ded8cc;
+  --accent:#111;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  padding: 18px;
+  padding-bottom: 40px;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+}
+h1 {
+  text-align: center;
+  font-size: 30px;
+  margin: 10px 0 4px;
+}
+.subtitle {
+  text-align:center;
+  color:var(--muted);
+  margin-bottom: 18px;
+}
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 16px;
+  margin-bottom: 14px;
+  box-shadow: 0 6px 18px rgba(0,0,0,.05);
+}
+h2 {
+  margin: 0 0 12px;
+  font-size: 20px;
+}
+label {
+  display:block;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--muted);
+  margin-top: 12px;
+}
+select, input, button {
+  width: 100%;
+  appearance: none;
+  -webkit-appearance: none;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  padding: 14px;
+  margin-top: 7px;
+  font-size: 16px;
+  background: #fff;
+}
+button {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  font-weight: 800;
+  margin-top: 14px;
+}
+button.secondary {
+  background: #fff;
+  color: #111;
+  border: 1px solid var(--border);
+}
+button.danger {
+  background: #8b1e1e;
+}
+.row {
+  display:grid;
+  grid-template-columns: 1fr 100px;
+  gap: 10px;
+  align-items:end;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 11px 6px;
+  border-bottom: 1px solid #eee;
+  text-align:left;
+}
+th:last-child, td:last-child {
+  text-align:right;
+  font-weight:800;
+}
+.rank {
+  width: 34px;
+  color: var(--muted);
+}
+.history-item {
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+}
+.small {
+  color: var(--muted);
+  font-size: 13px;
+}
+.empty {
+  color: var(--muted);
+  text-align:center;
+  padding: 10px;
+}
+</style>
+</head>
+<body>
+<h1>🏆 Premio Formica</h1>
+<div class="subtitle">Classifica ufficiale delle vacanze</div>
+
+<div class="card">
+  <h2>Assegna punti</h2>
+
+  <label for="person">Partecipante</label>
+  <select id="person">
+    <option value="Bozzo">Bozzo</option>
+<option value="Sive Sr">Sive Sr</option>
+<option value="Sive Jr">Sive Jr</option>
+<option value="Gale">Gale</option>
+<option value="NicolaIlMilan">NicolaIlMilan</option>
+<option value="Pacra">Pacra</option>
+<option value="Pacra Jr">Pacra Jr</option>
+<option value="Pera">Pera</option>
+<option value="Pera Jr">Pera Jr</option>
+<option value="Gallo">Gallo</option>
+<option value="Rizzino">Rizzino</option>
+<option value="Patata">Patata</option>
+  </select>
+
+  <label for="event">Evento</label>
+  <select id="event">
+    <option value="1" data-label="Aperitivo">Aperitivo (+1)</option>
+<option value="3" data-label="Cena fuori">Cena fuori (+3)</option>
+<option value="10" data-label="Weekend fuori">Weekend fuori (+10)</option>
+<option value="20" data-label="Weekend estero">Weekend estero (+20)</option>
+<option value="30" data-label="Vacanza lunga">Vacanza lunga (+30)</option>
+<option value="40" data-label="Viaggio intercontinentale">Viaggio intercontinentale (+40)</option>
+  </select>
+
+  <button type="button" onclick="addEvent()">Assegna punti</button>
+</div>
+
+<div class="card">
+  <h2>Punti manuali</h2>
+  <label for="manualPerson">Partecipante</label>
+  <select id="manualPerson">
+    <option value="Bozzo">Bozzo</option>
+<option value="Sive Sr">Sive Sr</option>
+<option value="Sive Jr">Sive Jr</option>
+<option value="Gale">Gale</option>
+<option value="NicolaIlMilan">NicolaIlMilan</option>
+<option value="Pacra">Pacra</option>
+<option value="Pacra Jr">Pacra Jr</option>
+<option value="Pera">Pera</option>
+<option value="Pera Jr">Pera Jr</option>
+<option value="Gallo">Gallo</option>
+<option value="Rizzino">Rizzino</option>
+<option value="Patata">Patata</option>
+  </select>
+
+  <div class="row">
+    <div>
+      <label for="manualReason">Motivo</label>
+      <input id="manualReason" placeholder="Es. bonus foto prova">
+    </div>
+    <div>
+      <label for="manualPoints">Punti</label>
+      <input id="manualPoints" type="number" inputmode="numeric" value="1">
+    </div>
+  </div>
+
+  <button type="button" onclick="addManual()">Aggiungi punti manuali</button>
+</div>
+
+<div class="card">
+  <h2>Classifica</h2>
+  <table>
+    <thead>
+      <tr><th class="rank">#</th><th>Nome</th><th>Punti</th></tr>
+    </thead>
+    <tbody id="ranking"></tbody>
+  </table>
+</div>
+
+<div class="card">
+  <h2>Storico</h2>
+  <div id="history"></div>
+  <button type="button" class="secondary" onclick="undoLast()">Annulla ultimo evento</button>
+  <button type="button" class="danger" onclick="resetAll()">Reset totale</button>
+</div>
+
+<script>
+const STORAGE_KEY = "premio_formica_v2_custom_2026";
+const initialPlayers = {
+  "Bozzo": 0,
+  "Sive Sr": 0,
+  "Sive Jr": 0,
+  "Gale": 0,
+  "NicolaIlMilan": 0,
+  "Pacra": 0,
+  "Pacra Jr": 0,
+  "Pera": 0,
+  "Pera Jr": 0,
+  "Gallo": 0,
+  "Rizzino": 0,
+  "Patata": 0
+};
+
+let state = loadState();
+
+function loadState() {
+  try {
+    const saved = JSON.parse(localStorage.getItem(STORAGE_KEY));
+    if (saved && saved.players && saved.history) {
+      for (const name of Object.keys(initialPlayers)) {
+        if (typeof saved.players[name] !== "number") saved.players[name] = 0;
+      }
+      for (const name of Object.keys(saved.players)) {
+        if (!(name in initialPlayers)) delete saved.players[name];
+      }
+      return saved;
+    }
+  } catch (e) {}
+  return { players: {...initialPlayers}, history: [] };
+}
+
+function saveState() {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+}
+
+function today() {
+  return new Date().toLocaleDateString("it-IT", {
+    day: "2-digit", month: "2-digit", year: "numeric",
+    hour: "2-digit", minute: "2-digit"
+  });
+}
+
+function addPoints(name, points, label) {
+  if (!name || isNaN(points)) return;
+  state.players[name] = (state.players[name] || 0) + points;
+  state.history.push({
+    name,
+    points,
+    label,
+    date: today()
+  });
+  saveState();
+  render();
+}
+
+function addEvent() {
+  const person = document.getElementById("person").value;
+  const eventSelect = document.getElementById("event");
+  const points = Number(eventSelect.value);
+  const label = eventSelect.options[eventSelect.selectedIndex].dataset.label;
+  addPoints(person, points, label);
+}
+
+function addManual() {
+  const person = document.getElementById("manualPerson").value;
+  const points = Number(document.getElementById("manualPoints").value);
+  const reason = document.getElementById("manualReason").value.trim() || "Punti manuali";
+  addPoints(person, points, reason);
+  document.getElementById("manualReason").value = "";
+  document.getElementById("manualPoints").value = "1";
+}
+
+function undoLast() {
+  const last = state.history.pop();
+  if (!last) return;
+  state.players[last.name] = (state.players[last.name] || 0) - last.points;
+  saveState();
+  render();
+}
+
+function resetAll() {
+  const ok = confirm("Vuoi azzerare tutta la classifica e lo storico?");
+  if (!ok) return;
+  state = { players: {...initialPlayers}, history: [] };
+  saveState();
+  render();
+}
+
+function render() {
+  const ranking = document.getElementById("ranking");
+  ranking.innerHTML = "";
+
+  Object.entries(state.players)
+    .sort((a,b) => b[1] - a[1] || a[0].localeCompare(b[0]))
+    .forEach(([name, points], index) => {
+      const medal = index === 0 ? "🥇" : index === 1 ? "🥈" : index === 2 ? "🥉" : index + 1;
+      const tr = document.createElement("tr");
+      tr.innerHTML = `<td class="rank">${medal}</td><td>${name}</td><td>${points}</td>`;
+      ranking.appendChild(tr);
+    });
+
+  const history = document.getElementById("history");
+  history.innerHTML = "";
+
+  if (state.history.length === 0) {
+    history.innerHTML = '<div class="empty">Nessun evento ancora.</div>';
+    return;
+  }
+
+  state.history.slice().reverse().forEach(item => {
+    const div = document.createElement("div");
+    div.className = "history-item";
+    div.innerHTML = `<strong>${item.name}</strong>: ${item.label} <strong>(${item.points > 0 ? "+" : ""}${item.points})</strong><br><span class="small">${item.date}</span>`;
+    history.appendChild(div);
+  });
+}
+
+render();
+</script>
+</body>
+</html>
